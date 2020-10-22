@@ -17,7 +17,7 @@ try {
 }
 
 //３．データ登録SQL作成
-$stmt = $pdo->prepare("INSERT INTO gs_bm_table(id, name, website, comment, indate)VALUES(NULL, :name, :email, :text, sysdate())");
+$stmt = $pdo->prepare("INSERT INTO gs_bm_table(id, name, website, comment, indate)VALUES(NULL, :name, :website, :comment, sysdate())");
 $stmt->bindValue(':name', $name , PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':website', $website, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':comment', $comment, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
